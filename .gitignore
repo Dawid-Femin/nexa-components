@@ -3,3 +3,6 @@ node_modules
 *storybook.log
 storybook-static
 dist
+.changeset/pre.json
+.vscode/
+.DS_Store

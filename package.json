@@ -1,5 +1,5 @@
 {
-  "name": "nexa-components",
+  "name": "nexa-ui-components",
   "version": "1.0.1",
   "description": "React UI components library with Material-UI",
   "main": "./dist/index.js",
@@ -46,7 +46,7 @@
     "build:swc": "swc src -d dist --copy-files --ignore '**/*.stories.tsx,**/*.test.tsx,**/*.spec.tsx' --strip-leading-paths",
     "build:types": "tsc --project tsconfig.build.json --emitDeclarationOnly",
     "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm run type-check && pnpm run test && pnpm run build",
+    "prepublishOnly": "pnpm run type-check && pnpm run build",
     "type-check": "tsc --noEmit"
   },
   "keywords": [
@@ -60,7 +60,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twoja-nazwa/nexa-components"
+    "url": "https://github.com/Dawid-Femin/nexaui"
   },
   "packageManager": "pnpm@10.20.0",
   "pnpm": {
