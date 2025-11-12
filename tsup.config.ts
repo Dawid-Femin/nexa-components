@@ -2,9 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig([
   {
-    entry: {
-      index: "src/index.ts",
-    },
+    entry: { index: "src/index.ts" },
     format: ["esm", "cjs"],
     dts: true,
     sourcemap: true,
@@ -22,7 +20,13 @@ export default defineConfig([
     ],
     treeshake: true,
     splitting: false,
+    esbuildOptions(options) {
+      options.jsx = "automatic";
+      options.jsxImportSource = "react";
+    },
+    outDir: "dist",
   },
+
   {
     entry: {
       "Alert/index": "src/MuiComponents/Alert/Alert.tsx",
@@ -31,9 +35,11 @@ export default defineConfig([
       "Cropper/index": "src/Components/Cropper/Cropper.tsx",
       theme: "src/theme/theme.ts",
     },
-    format: ["esm"],
+    format: ["esm", "cjs"],
     dts: true,
-    bundle: false,
+    sourcemap: true,
+    clean: false,
+    bundle: true,
     external: [
       "react",
       "react-dom",
@@ -44,6 +50,8 @@ export default defineConfig([
       "@emotion/styled",
       "react-easy-crop",
     ],
+    treeshake: true,
+    splitting: false,
     esbuildOptions(options) {
       options.jsx = "automatic";
       options.jsxImportSource = "react";
